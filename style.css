@@ -1,0 +1,217 @@
+
+:root {
+    --netflix-red: #e50914;
+    --netflix-black: #000000;
+    --netflix-dark-gray: #141414;
+    --netflix-gray: #333333;
+    --netflix-light-gray: #564d4d;
+    --netflix-white: #ffffff;
+    --netflix-text-gray: #b3b3b3;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* Header Styles */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+    transition: var(--transition);
+    padding: 0 4%;
+}
+
+.header.scrolled {
+    background-color: var(--netflix-black);
+
+}
+
+.logo {
+    color: var(--netflix-red);
+    font-size: 25px;
+    font-weight: bold;
+    margin-right: 25px;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--netflix-black);
+    color: var(--netflix-white);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
+    transition: var(--transition);
+    padding: 0 4%;
+}
+
+.header.scrolled {
+    background-color: var(--netflix-black);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: var(--netflix-white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--netflix-text-gray);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--netflix-white);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 20px;
+}
+
+.search-icon {
+    cursor: pointer;
+    padding: 8px;
+    font-size: 25px;
+}
+
+.search-box {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    padding: 8px 12px;
+    background-color: rgba(204, 176, 176, 0.8);
+    border: 1px solid var(--netflix-white);
+    color: var(--netflix-white);
+    outline: none;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.search-container:hover .search-box {
+    width: 250px;
+    opacity: 1;
+}
+
+/* ✅Notification Styling */
+.notification-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: var(--netflix-white);
+    transition: var(--transition);
+}
+
+.notification-icon:hover {
+    color: var(--netflix-text-gray);
+}
+
+/* ✅ Profile Styling */
+.profile-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--netflix-red);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--netflix-white);
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 18px;
+}
+
+.profile-icon:hover {
+    background-color: #b0060f;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="%23141414"/><text x="960" y="540" text-anchor="middle" font-family="Arial" font-size="48" fill="%23333">Featured Movie Background</text></svg>');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+}
+
+.hero-content {
+    max-width: 500px;
+    z-index: 2;
+}
+.hero-title{
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+
+        line-height: 1.1;
+
+    }
